@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var debug = require('debug')('express-test');
+var app = require('../app');
+var custom_port = 8080;
+
+app.set('port', custom_port);
+
+var server = app.listen(app.get('port'), function() {
+    console.log('Express server is listening on port ' + server.address().port);
+    debug('Express server listening on port ' + server.address().port);
+});
